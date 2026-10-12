@@ -4,6 +4,18 @@ Tablero para registrar incidencias, seguir su estado y dejar un historial. El fl
 
 La única ruta de la aplicación es `/`. El detalle, los filtros y el alta viven en esa misma página.
 
+## Requisitos
+
+Entorno de referencia: Linux/Ubuntu, sin Docker.
+
+- PHP 8.2 o superior, con la extensión `pdo_mysql`.
+- Composer 2.x.
+- MySQL 8.0 o compatible.
+- Node.js y npm no son necesarios para ejecutar la aplicación, ya que Bootstrap se carga desde CDN y Livewire gestiona sus propios recursos.
+- Para ejecutar los tests, se necesita también la extensión `pdo_sqlite`.
+
+La aplicación utiliza Laravel, Blade, Livewire y Bootstrap 5. No requiere autenticación para acceder al panel.
+
 ## Esquema
 
 ```text
@@ -64,13 +76,7 @@ tests/Feature/
 docs/integridad-incidencias.md
 ```
 
-## Requisitos
-
-- PHP 8.2 o superior, con `pdo_mysql`. Los tests usan además `pdo_sqlite`.
-- Composer.
-- MySQL 8.
-
-Node no hace falta para usar el panel. La interfaz carga Bootstrap desde un CDN y los assets de Livewire los sirve el propio paquete. La vista `resources/views/welcome.blade.php` es la de la plantilla de Laravel y no tiene ruta.
+La vista `resources/views/welcome.blade.php` es la de la plantilla de Laravel y no tiene ruta.
 
 ## Instalación
 
